@@ -1,4 +1,4 @@
-package com.selecao.web.service;
+package com.selecao.web;
 
 import java.lang.reflect.Type;
 

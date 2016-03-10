@@ -15,9 +15,10 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.Status;
 
+import com.selecao.ejb.entity.Endereco;
 import com.selecao.ejb.facade.FacadeLocal;
 
-@Path("/cep")
+@Path("/endereco")
 @Consumes(MediaType.APPLICATION_JSON)
 @Produces(MediaType.APPLICATION_JSON)
 public class CepResource {
@@ -45,7 +46,7 @@ public class CepResource {
     
     @PUT
     @Path("/{id}")
-    public Response mergeCep(@PathParam("id") Long id) {
+    public Response mergeCep(@PathParam("id") Long id, final Endereco endereco) {
 	return Response.status(Status.NO_CONTENT).build();
     }
     
