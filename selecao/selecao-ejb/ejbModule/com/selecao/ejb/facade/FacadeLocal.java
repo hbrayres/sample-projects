@@ -1,12 +1,9 @@
-/**
- * 
- */
 package com.selecao.ejb.facade;
 
 import javax.ejb.Local;
 
 /**
- * Local Facade
+ * EJB Local Facade
  * 
  * @author heber.junior
  *
