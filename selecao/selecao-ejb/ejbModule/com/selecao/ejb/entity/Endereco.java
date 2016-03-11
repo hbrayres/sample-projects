@@ -6,6 +6,11 @@ public class Endereco {
     
     private Long cep;
     
+    /*
+     * usado apenas na tela de novo cep 
+     */
+    private Long cepCorreios;
+    
     private String logradouro;
     
     private String tipoLogradouro;
@@ -70,6 +75,14 @@ public class Endereco {
 
     public void setCep(Long cep) {
         this.cep = cep;
+    }
+
+    public Long getCepCorreios() {
+        return cepCorreios;
+    }
+
+    public void setCepCorreios(Long cepCorreios) {
+        this.cepCorreios = cepCorreios;
     }
     
     
