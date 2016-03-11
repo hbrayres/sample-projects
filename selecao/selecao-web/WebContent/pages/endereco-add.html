@@ -1,11 +1,20 @@
 <form role="form">
 	<h3>Novo</h3>
 
+	<div class="row">
+		<div class="col-md-6">
+			<label for="cepApp">Cep:</label>
+			<input type="text" id="cepApp" name="cepApp" placeholder="Cep para busca" ng-model="cepCorreios">
+			<a class="btn btn-primary" ng-click="buscarCep(cepCorreios)">Buscar</a>
+		</div>
+	</div>
+
 	<div ng-include="'pages/_form.html'"></div>
 	<div class="row">
 		<div class="col-md-6">
 			<a class="btn btn-default" ng-click="cancel()">Cancelar</a>
-			<a class="btn btn-default" ng-click="addEndereco()">Salvar</a>
+			<a class="btn btn-primary" ng-click="addEndereco()">Salvar</a>
 		</div>
+		<div class="col-md-6"></div>
 	</div>
 </form>

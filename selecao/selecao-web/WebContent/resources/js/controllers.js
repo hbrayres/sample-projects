@@ -5,7 +5,6 @@
 
 var app = angular.module('enderecoApp.controllers', []);
 
-
 // http://stackoverflow.com/questions/14718826/angularjs-disable-partial-caching-on-dev-machine
 app.run(function ($rootScope, $templateCache) {
  	$rootScope.$on('$viewContentLoaded', function () {
@@ -14,7 +13,6 @@ app.run(function ($rootScope, $templateCache) {
 });
 
 app.controller('EnderecoListController', function($scope, popupService, $location, EnderecoFactory) {
-	
 	$scope.deleteEndereco = function(enderecoId) {
 		if (popupService.showPopup('Deseja realmente excluir?')) {
 			EnderecoFactory.remove({id:enderecoId});
@@ -32,9 +30,18 @@ app.controller('EnderecoListController', function($scope, popupService, $locatio
 	
 	$scope.enderecos = EnderecoFactory.query();
 
-}).controller('EnderecoCreateController', function($scope, $location, EnderecoFactory){
-
+}).controller('EnderecoCreateController', function($scope, $location, EnderecoFactory, CepAppFactory){
 	$scope.endereco = new EnderecoFactory();
+	
+	$scope.buscarCep = function(cepId) {
+		var cepReturn = CepAppFactory.get({id: cepId});
+		$scope.endereco.tipoLogradouro = cepReturn.tipodelogradouro;
+		$scope.endereco.logradouro = cepReturn.logradouro;
+		$scope.endereco.cep = cepReturn.cep;
+		$scope.endereco.bairro = cepReturn.bairro;
+		$scope.endereco.cidade = cepReturn.cidade;
+		$scope.endereco.estado = cepReturn.estado;
+	};
 	
 	$scope.cancel = function() {
 		$location.path('/enderecos');
