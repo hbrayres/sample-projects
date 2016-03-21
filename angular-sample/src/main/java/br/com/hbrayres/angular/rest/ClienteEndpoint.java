@@ -47,7 +47,7 @@ public class ClienteEndpoint {
     @Path("/{id:[0-9][0-9]*}")
     public Response deleteById(@PathParam("id") Long id) {
 	try {
-	    facade.deleteEnderecoById(id);
+	    facade.deleteClienteById(id);
 	} catch (NoResultException e) {
 	    return Response.status(Status.NOT_FOUND).build();
 	}
