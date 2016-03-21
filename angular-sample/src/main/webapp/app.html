@@ -20,8 +20,15 @@
                       <span class="icon-bar"></span>
                       <span class="icon-bar"></span>
                     </button>
-				    <a class="navbar-brand" href="#">Angular-sample</a>
+				    <a class="navbar-brand" href="#/">Angular-sample</a>
 			    </div>
+			    <div class="navbar-collapse collapse">
+				<ul class="nav navbar-nav">
+					<li><a ng-class="{active: matchesRoute('Clientes')}" href="#/Clientes" data-toggle="offcanvas">Clientes</a></li>
+					
+					<li><a ng-class="{active: matchesRoute('Enderecos')}" href="#/Enderecos" data-toggle="offcanvas">Endereços</a></li>
+				</ul>
+			</div>
 			</div>
     	</div>
         
@@ -35,7 +42,7 @@
                     <nav class="sidebar-nav" ng-controller="NavController" role="navigation">
                         <div id="sidebar-entries" class="list-group">
                         	<a class="list-group-item" ng-class="{active: matchesRoute('Clientes')}" href="#/Clientes" data-toggle="offcanvas">Clientes</a>
-                        	<a class="list-group-item" ng-class="{active: matchesRoute('Enderecos')}" href="#/Enderecos" data-toggle="offcanvas">Enderecos</a>
+                        	<a class="list-group-item" ng-class="{active: matchesRoute('Enderecos')}" href="#/Enderecos" data-toggle="offcanvas">Endereços</a>
                         </div>
                     </nav>
                 </div>
